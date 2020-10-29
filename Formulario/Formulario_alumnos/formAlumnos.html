@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario de recepción de notas para el alumno</h1>
+    <form action="formAlumnos.php" method="post">
+            
+        <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre"><br><br>
+
+        <label for="apellido">Apellidos:</label>
+            <input type="text" name="apellido" ><br><br>
+       
+        <label for="curso">Curso:</label>            
+        <select name="curso">                
+            <option value="1º">1º</option>                
+            <option value="2º">2º</option>                           
+        </select></p><br>
+
+        <label for="ciclo">Ciclo:</label>            
+        <select name="ciclo">                
+            <option value="DAW">DAW</option>                
+            <option value="DAM">DAM</option>                           
+        </select></p><br>
+        <label for="notas"></label>
+        <label for="cal1">Calificacion PROG:</label>
+            <input type="number" name="cal1" id="notas" step ="0.1" min="0" max="10"><br><br>
+        <label for="cal2">Calificacion ED:</label>
+            <input type="number" name="cal2" id="notas" step ="0.1" min="0" max="10"><br><br>
+        <label for="cal3">Calificacion LLMM:</label>
+            <input type="number" name="cal3" id="notas" step ="0.1" min="0" max="10"><br><br>
+        <label for="cal4">Calificacion BBDD:</label>
+            <input type="number" name="cal4" id="notas" step ="0.1" min="0" max="10"><br><br>
+        <input type="submit" value="Enviar">
+    </form> 
+    
+</body>
+</html>
