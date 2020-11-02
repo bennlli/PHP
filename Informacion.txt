@@ -32,4 +32,4 @@ Entramos en settings buscamos PHP, 'edit in setting.json' seguido copiamos el co
     "intelephense.files.associations": [
         "*.php",
         "*.phtml"
-    ],
+    ]
