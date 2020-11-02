@@ -7,18 +7,11 @@
 </head>
 <body>
     <form action="conversión_rgb_hex.php" method="POST">
-        <label for="Red" name="rojo"> Color!</label><br>
-        <input type="text" name="rojo">
-        <input type="text" name="rojo1">
-        <input type="text" name="rojo2"><br><br>
-    
-        <label for="yellow" name="amarillo"> Segundo Color! </label><br>
-        <input type="text" name="amarillo"><br><br>
-        
-        <label for="blue" name="azul"> Tercer Color! </label><br>
-        <input type="text" name="azul"><br><br>
-
-        <input type="submit" name="Submit" id="">
+        <h1><label for="color" name="color"> RGB a Hexadecimal</label></h1><br>
+        <input type="number" name="num1" min="0" max="255" value="255">
+        <input type="number" name="num2" min="0" max="255" value="0">
+        <input type="number" name="num3" min="0" max="255" value="0"><br><br>
+        <input type="submit" name="Enviar" id="">
 
     </form>
 </body>

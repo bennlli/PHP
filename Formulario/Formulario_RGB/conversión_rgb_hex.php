@@ -8,11 +8,8 @@
 <body>
     <h1>Probando</h1>
     <?php
-    
-            echo "El color rojo es: #" . dechex($_POST["rojo"]) . " " .dechex($_POST["rojo1"]) ." ". dechex($_POST["rojo2"]) . "<br>";
-            echo "El amarillo es : " . dechex($_POST["amarillo"]) . "<br>";    
-            echo "El color azul es: " . dechex($_POST["azul"]). "<br>";
+        echo "R: ".$_POST["num1"].", G: ".$_POST["num2"].", B:". $_POST["num3"]."<br>";
+        echo "El color Hexadecimal es: #" . dechex($_POST["num1"]).dechex($_POST["num2"]).dechex($_POST["num3"]) . "<br>";
     ?>
-    
 </body>
 </html>
