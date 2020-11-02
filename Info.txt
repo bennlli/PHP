@@ -1,4 +1,11 @@
 ************************************************************************************************************************* 
+                                            Solucion problema al cerrar XAMPP
+************************************************************************************************************************* 
+Entramos en 'C:\xampp' ,seguido buscamos el archivo 'xampp-control.exe', boton secundario, propiedades, compatibilidad,
+
+y ticamos en 'Ejecutar este programa como administrador', aplicamos y aceptamos.
+
+************************************************************************************************************************* 
                                             Corregir el error de "php.validate.executablePath"
 ************************************************************************************************************************* 
 Entramos en settings buscamos PHP, 'edit in setting.json' seguido copiamos el codigo:
