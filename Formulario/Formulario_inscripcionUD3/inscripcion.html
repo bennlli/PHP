@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="inscripcion.php" method="POST">
+        <h1><label for="formulario" name="formulario">Formulario genérico</label></h1><hr>
+        <label for="lugar">Tipo de via:</label><br>
+        <select name="lugar">
+            <option value="Calle">Calle</option>
+            <option value="Avenida">Avenida</option>
+            <option value="Plaza">Plaza</option><br>
+            <input type="text" name="direccion"><br>
+        </select>
+        <br><br>
+        <label for="num">Número</label><br>
+            <input type="text" name="numero"><br><br>
+        <label for="poblacion">Población</label><br>
+            <input type="text" name="poblacion"><br><br>
+        <label for="pais">País</label><br>
+            <input type="text" name="pais"><br><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
