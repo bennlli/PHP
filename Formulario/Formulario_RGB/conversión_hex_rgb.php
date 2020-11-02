@@ -9,7 +9,7 @@
     <h1>Hexadecimal a RGB</h1>
     <?php
         
-        echo "El color RGB es: ". ($_POST["color1"])."<hr>";
+        echo "El color Hexadecimal es: ". ($_POST["color1"])."<hr>";
         
         $color_decimal = $_POST["color1"];
         /*
