@@ -14,13 +14,12 @@
         echo 'Fallo al conectar con la base de datos :('.$mysqli->connect_errno.')'.$mysqli->connect_error;
     }else{
         # CORRECTA.
-        echo '<h3>Conexión establecidad satisfactoriamente Index</h3><br><hr>';
+        echo '<h3>Conexión establecidad satisfactoriamente</h3><hr>';
     }
     ?>
-    <?php include 'total.php'?>
-    <?php include 'ben_1.php'?>
-    <?php include 'ben_2.php'?>
-    <h1>Datos obtenidos</h1>
+    <h2><a href="total.php">Total de gastos y ventas.</a></h2>
+    <h2><a href="ben_1.php">Lo beneficios de la primera semana.</a></h2>
+    <h2><a href="ben_2.php">Lo beneficios de la segunda semana.</a></h2>
 
 </body>
 </html>
