@@ -10,7 +10,7 @@ class Escuela{
     # Mensajes de conexción 
     private $men1 = '<h3>Conexion fallida</h3><br><hr>';
     private $men2 = '<h3>Conexion realizada exitosamente</h3><br><hr>';
-    
+
     # Conexión
     private $conexion;
     
@@ -35,13 +35,43 @@ class Escuela{
     # Función para devolver los alumnos
     public function devolverAlumnos(){
         if(!$this->hayError()){
-            $resultado = $this->conexion->query('Select nombre, apellido, edad FROM alumnos');
+            $resultado = $this->conexion->query('SELECT nombre, apellido, edad FROM alumnos');
             return $resultado;
         }else{
             return null;
         }
     }
-    
+
+    # Función para insertar datos en la bbdd
+    # Pasamos por parámetros los datos que equivalen al ingreso
+    public function insertarAlumnos($nombre,$apellido,$edad){
+        # Sentencia SQL para insertar datos nuevos en la bbdd
+        $sqlInsert = "INSERT INTO alumnos(id,nombre,apellido,edad) VALUES (NULL, '".$nombre."', '".$apellido."', ".$edad.")";
+        $this->conexion->query($sqlInsert);
+        
+    }
+    # Función para actualizar datos en la bbdd
+    # Pasamos por parámetros los datos 
+    public function actualizarAlumnos($id,$nombre,$apellido,$edad){
+        # Sentencia SQL para actualizar datos nuevos en la bbdd
+        $sqlActualizacion = "UPDATE alumnos SET nombre='".$nombre."', apellido ='".$apellido."', edad ='".$edad." WHERE id =".$id;
+        $this->conexion->query($sqlActualizacion);
+    }
+    # Función para borrar de datos en la bbdd
+    # Pasamos por parámetros los datos 
+    public function borrarAlumnos($id){
+        # Sentencia SQL para actualizar datos nuevos en la bbdd
+        if($this->error==false){
+        $sqlBorrar = "DELETE FROM alumnos WHERE id=".$id;
+        if(!$this->conexion->query($sqlBorrar)){
+            echo 'Fallo al tratar de borrar: ('.$this->conexion->errno.')'.$this->conexion->error;
+            return false;
+        }
+        return true;
+    }else{
+        return false;
+        }
+    }
 }
 
 ?>
