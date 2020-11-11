@@ -22,6 +22,7 @@
             <th>Edad</th>
         </tr>
         <?php
+        
         if($resultado!=null){
             while ($fila = $resultado->fetch_assoc()){
                 echo '<tr>';

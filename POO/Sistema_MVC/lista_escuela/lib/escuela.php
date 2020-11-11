@@ -7,6 +7,10 @@ class Escuela{
     private $db_name = 'escuela';
     private $port = 3306;
 
+    # Mensajes de conexción 
+    private $men1 = '<h3>Conexion fallida</h3><br><hr>';
+    private $men2 = '<h3>Conexion realizada exitosamente</h3><br><hr>';
+    
     # Conexión
     private $conexion;
     
@@ -17,8 +21,10 @@ class Escuela{
     $this->conexion = new mysqli($this->host, $this->user, $this->pass, $this->db_name, $this->port);
         if ($this->conexion->connect_errno) {
             $this->error = true;
-            
-                    }
+            echo $this->men1;
+        }else{
+            echo $this->men2;
+        }
     }
     # Función para saber si hay error en la conexión
     function hayError(){
