@@ -46,7 +46,7 @@ class Escuela{
     # Pasamos por parámetros los datos que equivalen al ingreso
     public function insertarAlumnos($nombre,$apellido,$edad){
         # Sentencia SQL para insertar datos nuevos en la bbdd
-        $sqlInsert = "INSERT INTO alumnos(id,nombre,apellido,edad) VALUES (NULL, '".$nombre."', '".$apellido."', ".$edad.")";
+        $sqlInsert = "INSERT INTO alumnos(id,nombre,apellido,edad) VALUES (NULL, '".$nombre."', '".$apellido."', 18)";
         $this->conexion->query($sqlInsert);
         
     }
