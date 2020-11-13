@@ -1,6 +1,6 @@
 <?php 
 # Incluimos la conexión.
-include 'nba_db.php';
+include_once 'nba_db.php';
 
 # Creamos la clase con su herencia del padre.
 class Resultados extends Nba{
@@ -21,7 +21,7 @@ class Resultados extends Nba{
                  $tabla=[];
                  # foreach para recorrer la consulta
                  foreach ($resultado as $fila){
-                     # Almacenamos los datos en el array
+                     # Almacenamos los datos en el array para retornarlo.
                      $tabla[]=$fila;
                  }return $tabla;
              }else{
