@@ -30,4 +30,13 @@ public function devolverActores(){
 }
 
 }
+
+# Instanciamos el objeto
+$listaActores = new Actores();
+# Llamos la funcion para que nos retorne el resultado de la búsqueda.
+    $resultadoFinal = $listaActores->devolverActores();
+    # Con el Foreach sacamos el resultado.
+    foreach ($resultadoFinal as $fila){
+        echo $fila['name'].'<br>';
+    }
 ?>
