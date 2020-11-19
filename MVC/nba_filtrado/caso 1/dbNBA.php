@@ -10,7 +10,7 @@
         
         # Mensajes de la conexión.
         private $men1 = '<h3>Conexión fallida</h3>';
-        private $men2 = '<h3>Conexión realizada exitosamente</h3>';
+        private $men2 = '<h3>Conexión realizada exitosamente</h3><hr>';
         
         # Conexión.
         private $con;
@@ -33,28 +33,25 @@
         function error(){
             return $this->error;
         }
+     
+    
+
     # Función genérica para crear consultas.
     public function consultas($consulta){
         if(!$this->error()){
-            $resultado = $this->conexion->query($consulta);
+            $resultado = $this->con->query($consulta);
             return $resultado;
         }else{
             return null;
             }
         }  
     
-    }
-
-# Clase declarada
-class Equipo{
-
-    
     # Función para devolver el resultado del equipo.
     function devolverEquipo($team){
         # Creamos la consulta.
         $sql = "SELECT * FROM equipos WHERE Nombre = '$team'";
         # Almacenamos los resultados de la función.
-        $resultadoEquipo = $this->$sql; 
+        $resultadoEquipo = $this->consultas($sql); 
             if($resultadoEquipo!=null){
                 # Creamos el array
                 $tabla =[];
@@ -66,8 +63,6 @@ class Equipo{
             }else{
                 return null;
             }
-
-
     }
 }
 ?>
