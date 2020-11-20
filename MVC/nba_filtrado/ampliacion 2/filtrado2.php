@@ -17,19 +17,19 @@
     <?php
     # Incluimos el archivo donde tenemos todo.
     include 'dbNBA2.php';
-    $equipo_loc = $_POST['equipo_loc'];
-    $equipo_vis = $_POST['equipo_vis'];
-    $temporada = $_POST['temporada'];
+    $equipo_local = $_POST['equipo_loc'];
+    $equipo_visitante = $_POST['equipo_vis'];
+    $temp = $_POST['temp'];
     
     # Hacemos la llamada al objeto para establecer la conexión.
     # Hacemos la llamada al objeto para obtener la información deseada.
     $equipo = new dbNBA2();
         
-    echo '<br>El equipo local que has buscado es <b>' .$equipo_loc. '</b><br>';
-    echo 'El equipo visitante que has buscado es <b>' .$equipo_vis. '</b><br>';
-    echo 'Temporada solicitada: <b>' .$temporada. '</b><br><br>';
+    echo '<br>El equipo local que has buscado es <b>' .$equipo_local. '</b><br>';
+    echo 'El equipo visitante que has buscado es <b>' .$equipo_visitante. '</b><br>';
+    echo 'Temporada solicitada: <b>' .$temp. '</b><br><br>';
 
-    $equipoResultado = $equipo->devolverEquipo($equipo_loc,$equipo_vis,$temporada);
+    $equipoResultado = $equipo->devolverEquipo($equipo_local,$equipo_visitante,$temp);
         foreach($equipoResultado as $filaEquipo){
             
             echo '<tr>';

@@ -17,7 +17,7 @@
     <h1>Seleccion de equipos</h1>
     <form action="filtrado2.php" method="POST">
         <label for="equipo_loc">Equipo local</label>
-            <select id="equipo_loc">
+            <select id="equipo_loc" name="equipo_loc">
                 <?php
                 foreach ($tabla as $fila){
                     echo '<option value="' . $fila['equipo_local'] . '">' . $fila['equipo_local'] . '</option>';
@@ -27,7 +27,7 @@
             </select><br>
     <form action="filtrado2.php" method="POST">
         <label for="equipo_vis">Equipo visitante</label>
-            <select id="equipo_vis">
+            <select id="equipo_vis" name="equipo_vis">
                 <?php
                 foreach ($tabla1 as $fila){
                     echo '<option value="' . $fila['equipo_visitante'] . '">' . $fila['equipo_visitante'] . '</option>';
@@ -36,8 +36,8 @@
                 </select><br>
 
     <form action="filtrado2.php" method="POST">
-        <label for="temporada">Temporada</label>
-            <select id="temporada">
+        <label for="temp">Temporada</label>
+            <select id="temp" name="temp">
                 <?php
                 foreach ($tabla2 as $fila){
                     echo '<option value="' . $fila['temporada'] . '">' . $fila['temporada'] . '</option>';
