@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="insertarDb.php" method="POST">
+    <form action="actualizarDB.php" method="POST">
         <label for="nombre">Nombre</label><br>
             <input type="text" name="nombre"><br>
             
@@ -20,7 +20,7 @@
             <input type="text" name="division"><br><br>
 
 
-            <input type="submit" value="Añadir"><br>
+            <input type="submit" value="actualizar"><br>
     </form>
     
 </body>
