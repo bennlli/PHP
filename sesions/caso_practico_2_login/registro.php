@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="MiPerfil.php" method="POST"></form>
+    <form action="MiPerfil.php" method="POST">
 
     <label for="name">Nombre</label><br>
     <input type="text" name="name" id="nombre"><br><br>
@@ -33,6 +33,7 @@
     <input type="hidden" name="accion" value="registro">
 
     <input type="submit" value="Registrar"><br><br>
+    </form>
 </body>
 
 </html>

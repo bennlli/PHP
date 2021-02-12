@@ -7,7 +7,7 @@
     <title>Perfil </title>
 </head>
 <body>
-    <form action="" method="POST"></form>
+    <form action="" method="POST">
         <label for="email">email: </label><br>
         <input type="email" name="email" id="email"><br><br>
         
@@ -19,7 +19,8 @@
         <br>
         <input type="submit" value="Actualizar"><br><br>
         <br><hr>
-
+    </form>
+    
         <?php
         //Control de acciones a realizar
         if(isset($_POST["accion"])){
