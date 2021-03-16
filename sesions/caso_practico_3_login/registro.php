@@ -15,6 +15,7 @@ $seguridad = new Seguridad();
 </head>
 
 <body>
+<h1>Registro</h1>
     <?php
     if ($_SESSION['tipo_error'] != null) {
         echo 'class=\"error\">Error ' . $_SESSION['tipo_error'];

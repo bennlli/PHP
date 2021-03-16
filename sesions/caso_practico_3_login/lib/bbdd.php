@@ -40,7 +40,7 @@ class BBDD extends Conexion{
   }
 
   //actualizar
-  public function actualizar_user($usuario, $nombre, $apellidos){
+  public function actualizar_user($usuario, $nombre, $apellidos,$rol){
     //creamos el nuevo usuario
   
     $modificar_user = new Usuario();
@@ -48,9 +48,9 @@ class BBDD extends Conexion{
     $modificar_user->setUsuario($usuario);
     $modificar_user->setNombre($nombre);
     $modificar_user->setApellidos($apellidos);
-   
+    $modificar_user->setRol($rol);
     //modificacion
-    $sql = "UPDATE usuarios SET nombre = '" . $nombre . "',apellidos = '" . $apellidos . "' WHERE usuario = '" . $usuario . "'";
+    $sql = "UPDATE usuarios SET nombre = '" . $nombre . "',apellidos = '" . $apellidos . "',rol = '" . $rol . "' WHERE usuario = '" . $usuario . "'";
     
     $resultado = $this->hacer_consulta($sql);
     if($resultado){
@@ -61,51 +61,52 @@ class BBDD extends Conexion{
   }
 
   //buscar usuario
-  public function buscar_usuario($usuario, $pass)
-    {
-      $pass_encrip = sha1($pass);
-
-        // Comprobar que la contraseña no sea null
-        if ($pass != null) {
+  public function buscar_usuario($usuario){
 
             // Consulta sql para la búsqueda del usuario
-            $sql = "SELECT * FROM usuarios WHERE usuario = '" . $usuario . "' AND pass = '" . $pass_encrip . "'";
-        } else {
-            // Consulta que se hará si sólo se da el nombre del usuario/email
             $sql = "SELECT * FROM usuarios WHERE usuario = '" . $usuario . "'";
-        }
 
         // Construcción de la consulta a la variable resultado
         $resultado = $this->hacer_consulta($sql);
         if ($resultado->num_rows > 0) {
             // Se crea un objeto de usuario para poder rellenar los datos encontrados en la bbdd
-            $usuarioDevuelto = new Usuario();
+            $usuario_devuelto = new Usuario();
 
             // Recorremos el resultado mientras haya datos y se asigna el valor encontrado al objeto
             for ($i = 0; $i < $resultado->num_rows; $i++) {
                 if ($i == 0) {
                     // Se asigna a una variable el array asociativo de lo obtenido con fetch_assoc
                     $userData = $resultado->fetch_assoc();
-                    $usuarioDevuelto->setId($userData['id']);
-                    $usuarioDevuelto->setEmail($userData['email']);
-                    $usuarioDevuelto->setNombre($userData['nombre']);
-                    $usuarioDevuelto->setApellidos($userData['apellidos']);
+                    $usuario_devuelto->setId($userData['id']);
+                    $usuario_devuelto->setEmail($userData['email']);
+                    $usuario_devuelto->setNombre($userData['nombre']);
+                    $usuario_devuelto->setApellidos($userData['apellidos']);
+                    $usuario_devuelto->setApellidos($userData['usuario']);
+                    $usuario_devuelto->setApellidos($userData['pass']);
                 }
             }
             // Devolución del objeto ya rellenado con los datos necesarios
-            return $usuarioDevuelto;
+            return $usuario_devuelto;
         } else {
             return null;
         }
     }
 
     //bucar roles
-    public function recogerRoles()
-    {
-        $sql = "SELECT * FROM roles";
-        $resultado = $this->hacer_consulta($sql);
-        return $resultado;
-    }
+    public function recoger_roles() {
+      $sql = "SELECT tipo FROM rol";
+      $resultado = $this->hacer_consulta($sql);
+      $arrayEquipo = [];
+
+      if ($resultado != null) {
+          while ($fila = $resultado->fetch_assoc()) {
+              $arrayEquipo[] = $fila;
+          }
+          return $arrayEquipo;
+      } else {
+          return null;
+      }
+  }
 
 }
 ?>
